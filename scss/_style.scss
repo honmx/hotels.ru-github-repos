@@ -1,0 +1,165 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.wrapper * {
+  font-family: 'Sono', sans-serif;
+  font-size: $fontSize;
+  color: $fontColor;
+}
+
+._container {
+  max-width: 850px;
+  padding: 0 15px;
+  margin-inline: auto;
+}
+
+.main {
+
+  flex: 1 1 auto;
+
+  &__container {
+    margin-top: $gap*2;
+    margin-bottom: $gap*2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 200;
+    margin-bottom: $gap;
+  }
+
+  &__form {}
+
+  &__response {
+    margin-top: $gap;
+  }
+}
+
+.form {
+
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__text-input {
+    min-width: 270px;
+    margin-right: $gap;
+  }
+
+  &__submit-btn {
+    width: 40px;
+    height: 40px;
+    background-image: url("../assets/search-svgrepo-com.svg");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__error {
+    position: absolute;
+    top: -8px;
+    left: 15px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .form {
+    &__text-input {
+      min-width: 230px;
+      max-width: 230px;
+      margin-right: $gap;
+    }
+  }
+}
+
+.response {
+
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+
+  &__list {}
+
+  &__item {}
+
+  &__item:not(:last-child) {
+    margin-bottom: $gap;
+  }
+
+  &__spinner {
+    position: absolute;
+    top: 30vh;
+    left: 50%;
+  }
+
+  &__not-found,
+  &__error {
+    text-align: center;
+    font-size: 70px;
+    font-weight: 200;
+    margin-top: 25vh;
+  }
+}
+
+@media screen and (max-width: 376px ) {
+  .response {
+    &__not-found,
+    &__error {
+      margin-top: 15vh;
+    }
+  }
+}
+
+.item {
+
+  display: flex;
+  justify-content: space-between;
+  padding: $padding*2;
+  border-radius: $borderRadius;
+  box-shadow: 0 0 10px #00000055;
+
+  &__repos-info {}
+
+  &__repos-info>*:not(:last-child),
+  &__profile-link>*:not(:last-child) {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &__repos-link {
+    display: block;
+    font-size: 18px;
+  }
+
+  &__language {}
+
+  &__stars {}
+
+  &__created-at {}
+
+  &__user-info {}
+
+  &__profile-link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__user-avatar {
+    width: 40px;
+    aspect-ratio: 1;
+    border: 1px solid $primaryLightColor;
+    border-radius: $borderRadius;
+  }
+
+  &__user-name {}
+}
